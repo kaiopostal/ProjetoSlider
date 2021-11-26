@@ -20,8 +20,7 @@ header {
 }
 
 .slider{
-    width: 500px;
-    height: 300px;
+    flex: 1;
     background-color: #0f0;
     overflow: hidden;
 }
@@ -50,6 +49,7 @@ header {
 .slider--controls{
     position: absolute;
     z-index: 99;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
