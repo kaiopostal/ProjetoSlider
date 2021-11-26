@@ -1,8 +1,14 @@
 let totalSlides = document.querySelectorAll('.slider--item').length;
 let currentSlide = 0;
 
+let sliderWidth = document.querySelector('.slider').clientWidth;
+
 document.querySelector('.slider--width').style.width = 
-`calc(100vw * ${totalSlides})`;
+`${sliderWidth * totalSlides}px`;
+
+
+document.querySelector('.slider--controls').style.width =
+ `${sliderWidth}px`;
 
 document.querySelector('.slider--controls').style.height =
  `${document.querySelector('.slider').clientHeight}px`;
@@ -29,9 +35,10 @@ document.querySelector('.slider--controls').style.height =
  }
 
  function updateMargin(){
-     let newMargin = (currentSlide * document.body.clientWidth); //Pega a largura da tela do cliente
+     let sliderWidth = document.querySelector('.slider--item').clientWidth;//Pega a largura da tela do slider
+     let newMargin = (currentSlide * sliderWidth); 
      document.querySelector('.slider--width').style.marginLeft = `-${newMargin}px`
 
  }
 
- setInterval(goNext, 2000);
+ setInterval(goNext, 5000);
